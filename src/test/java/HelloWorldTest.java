@@ -121,4 +121,65 @@ public class HelloWorldTest {
                 .andReturn();
         response.print();
     }
+
+    /**
+     * II. Создание простых запросов к API
+     * <p>
+     * 06. Проверка типа запроса и параметров
+     */
+    @Test
+    public void testCheckTypeStatusRequest() {
+        Response response = RestAssured
+                .get("https://playground.learnqa.ru/api/check_type")
+                .andReturn();
+        int statusCode = response.getStatusCode();
+        System.out.println(statusCode);
+    }
+
+    /**
+     * II. Создание простых запросов к API
+     * <p>
+     * 07. Коды ответа сервера
+     */
+    @Test
+    public void testGet500StatusRequest() {
+        Response response = RestAssured
+                .get("https://playground.learnqa.ru/api/get_500")
+                .andReturn();
+        int statusCode = response.getStatusCode();
+        System.out.println(statusCode);
+    }
+
+    /**
+     * II. Создание простых запросов к API
+     * <p>
+     * 07. Коды ответа сервера
+     */
+    @Test
+    public void testGet404StatusRequest() {
+        Response response = RestAssured
+                .get("https://playground.learnqa.ru/api/something")
+                .andReturn();
+        int statusCode = response.getStatusCode();
+        System.out.println(statusCode);
+    }
+
+    /**
+     * II. Создание простых запросов к API
+     * <p>
+     * 07. Коды ответа сервера
+     */
+    @Test
+    public void testGet303StatusRedirectRequest() {
+        Response response = RestAssured
+                .given()
+                .redirects()
+//                .follow(false)
+                .follow(true)
+                .when()
+                .get("https://playground.learnqa.ru/api/get_303")
+                .andReturn();
+        int statusCode = response.getStatusCode();
+        System.out.println(statusCode);
+    }
 }
