@@ -85,4 +85,40 @@ public class HelloWorldTest {
             System.out.println(name);
         }
     }
+
+    /**
+     * II. Создание простых запросов к API
+     * <p>
+     * 06. Проверка типа запроса и параметров
+     */
+    @Test
+    public void testCheckTypeGetRequest() {
+        Response response = RestAssured
+                .given()
+                .queryParam("param1", "value1")
+                .queryParam("param2", "value2")
+                .get("https://playground.learnqa.ru/api/check_type")
+                .andReturn();
+        response.print();
+    }
+
+    /**
+     * II. Создание простых запросов к API
+     * <p>
+     * 06. Проверка типа запроса и параметров
+     */
+    @Test
+    public void testCheckTypePostRequest() {
+        Map<String, Object> body = new HashMap<>();
+        body.put("param1", "value1");
+        body.put("param2", "value2");
+        Response response = RestAssured
+                .given()
+//                .body("param1=value1&param2=value2")
+//                .body("{\"param1\":\"value1\",\"&param2\":\"value2\"}") // строка в json формате
+                .body(body)
+                .post("https://playground.learnqa.ru/api/check_type")
+                .andReturn();
+        response.print();
+    }
 }
