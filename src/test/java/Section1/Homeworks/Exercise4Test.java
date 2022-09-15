@@ -11,7 +11,8 @@ public class Exercise4Test {
      * <p>
      * Ex4: GET-запрос
      * <p>
-     * В проекте нужно создать тест, который отправляет GET-запрос по адресу: https://playground.learnqa.ru/api/get_text
+     * В проекте нужно создать тест, который отправляет GET-запрос по адресу:
+     * <a href="https://playground.learnqa.ru/api/get_text">https://playground.learnqa.ru/api/get_text</a>
      * <p>
      * Затем вывести содержимое текста в ответе на запрос. Когда тест будет готов - давайте его закоммитим в наш репозиторий.
      * <p>
