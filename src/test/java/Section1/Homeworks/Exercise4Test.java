@@ -25,6 +25,7 @@ public class Exercise4Test {
                 .andReturn();
 
 //        response.prettyPrint();
-        System.out.println(response.asString());
+        response.print();
+//        System.out.println(response.asString());
     }
 }
