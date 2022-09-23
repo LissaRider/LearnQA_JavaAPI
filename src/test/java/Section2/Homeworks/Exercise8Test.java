@@ -4,13 +4,12 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class Exercise8Test {
 
-    public static final String NOT_READY = "Job is NOT ready";
-    public static final String READY = "Job is ready";
+    public final String NOT_READY = "Job is NOT ready";
+    public final String READY = "Job is ready";
     private final String URL = "https://playground.learnqa.ru/ajax/api/longtime_job";
 
     /**
