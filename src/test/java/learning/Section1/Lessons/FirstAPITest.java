@@ -1,4 +1,4 @@
-package Section1.Lessons;
+package learning.Section1.Lessons;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;

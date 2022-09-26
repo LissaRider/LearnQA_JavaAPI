@@ -1,4 +1,4 @@
-package Section2.Homeworks;
+package learning.Section2.Homeworks;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;

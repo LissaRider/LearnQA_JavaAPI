@@ -1,4 +1,4 @@
-package Section3.Lessons;
+package learning.Section3.Lessons;
 
 import io.restassured.RestAssured;
 //import io.restassured.http.Headers;

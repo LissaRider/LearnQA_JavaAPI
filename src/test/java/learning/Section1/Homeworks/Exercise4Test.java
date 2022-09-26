@@ -1,4 +1,4 @@
-package Section1.Homeworks;
+package learning.Section1.Homeworks;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
