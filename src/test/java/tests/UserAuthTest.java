@@ -4,6 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import lib.Assertions;
 import lib.BaseTestCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,25 +45,33 @@ public class UserAuthTest extends BaseTestCase {
         this.userIdOnAuth = this.getIntFromJson(responseGetAuth, "user_id");
     }
 
+    /**
+     * III. Написание тестов
+     * <p>
+     * 07. Assertions
+     */
     @Test
     public void testAuthUser() {
 
-        JsonPath responseCheckAuth = RestAssured
+        Response responseCheckAuth = RestAssured
                 .given()
                 .header("x-csrf-token", this.header)
                 .cookie("auth_sid", this.cookie)
                 .get("https://playground.learnqa.ru/api/user/auth")
-                .jsonPath();
+                .andReturn();
 
-        int userIdOnCheck = responseCheckAuth.getInt("user_id");
-        assertTrue(userIdOnCheck > 0, String.format("Unexpected user_id %d", userIdOnCheck));
-
-        assertEquals(userIdOnAuth, userIdOnCheck, "user_id from auth request is not equal to user_id from check request");
+        Assertions.assertJsonByName(responseCheckAuth, "user_id", this.userIdOnAuth);
     }
 
+    /**
+     * III. Написание тестов
+     * <p>
+     * 07. Assertions
+     */
     @ParameterizedTest
     @ValueSource(strings = {"cookie", "headers"})
     public void testNegativeAuthUser(String condition) {
+
         RequestSpecification spec = RestAssured.given();
         spec.baseUri("https://playground.learnqa.ru/api/user/auth");
 
@@ -77,8 +86,8 @@ public class UserAuthTest extends BaseTestCase {
                 throw new IllegalArgumentException(String.format("Condition value is unknown: %s", condition));
         }
 
-        JsonPath responseForCheck = spec.get().jsonPath();
+        Response responseForCheck = spec.get().andReturn();
 
-        assertEquals(0, responseForCheck.getInt("user_id"), "user_id should be 0 for unauth request");
+        Assertions.assertJsonByName(responseForCheck, "user_id", 0);
     }
 }
