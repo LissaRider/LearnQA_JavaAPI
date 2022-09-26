@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * II. Создание простых запросов к API
+ * <p>
+ * 04. Параметры запроса
+ */
 public class QueryParamsTest {
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 04. Параметры запроса
-     */
     @Test
     public void testRestAssured() {
 

@@ -8,13 +8,13 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * II. Создание простых запросов к API
+ * <p>
+ * 08. Заголовки
+ */
 public class HeadersTest {
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 08. Заголовки
-     */
     @Test
     public void testGet303RedirectWithHeadersRequest() {
         Response response = RestAssured
@@ -31,11 +31,6 @@ public class HeadersTest {
         System.out.println(locationHeader);
     }
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 08. Заголовки
-     */
     @Test
     public void testShowAllHeadersRequest() {
 

@@ -50,5 +50,4 @@ public class JUnitTest {
                 .andReturn();
         assertEquals(404, response.getStatusCode(), "Unexpected status code");
     }
-
 }

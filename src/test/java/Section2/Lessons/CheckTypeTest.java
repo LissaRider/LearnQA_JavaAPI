@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * II. Создание простых запросов к API
+ * <p>
+ * 06. Проверка типа запроса и параметров
+ */
 public class CheckTypeTest {
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 06. Проверка типа запроса и параметров
-     */
     @Test
     public void testCheckTypeGetRequest() {
 
@@ -27,11 +27,6 @@ public class CheckTypeTest {
         response.print();
     }
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 06. Проверка типа запроса и параметров
-     */
     @Test
     public void testCheckTypePostRequest() {
 
@@ -50,11 +45,6 @@ public class CheckTypeTest {
         response.print();
     }
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 06. Проверка типа запроса и параметров
-     */
     @Test
     public void testCheckTypeStatusRequest() {
 

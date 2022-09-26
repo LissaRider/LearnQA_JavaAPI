@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * II. Создание простых запросов к API
+ * <p>
+ * 05. Парсинг JSON
+ */
 public class JSONParsingTest {
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 05. Парсинг JSON
-     */
     @Test
     public void testRestAssuredJsonParsing() {
 

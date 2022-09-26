@@ -4,13 +4,13 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
+/**
+ * II. Создание простых запросов к API
+ * <p>
+ * 07. Коды ответа сервера
+ */
 public class StatusCodeTest {
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 07. Коды ответа сервера
-     */
     @Test
     public void testGet500StatusRequest() {
 
@@ -22,11 +22,6 @@ public class StatusCodeTest {
         System.out.println(statusCode);
     }
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 07. Коды ответа сервера
-     */
     @Test
     public void testGet404StatusRequest() {
 
@@ -38,11 +33,6 @@ public class StatusCodeTest {
         System.out.println(statusCode);
     }
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 07. Коды ответа сервера
-     */
     @Test
     public void testGet303StatusRedirectRequest() {
 

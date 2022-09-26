@@ -8,13 +8,13 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * II. Создание простых запросов к API
+ * <p>
+ * 09. Cookie
+ */
 public class CookiesTest {
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 09. Cookie
-     */
     @Test
     public void testGetAuthCookiesRequest() {
 
@@ -44,11 +44,6 @@ public class CookiesTest {
         System.out.println(responseCookie);
     }
 
-    /**
-     * II. Создание простых запросов к API
-     * <p>
-     * 09. Cookie
-     */
     @Test
     public void testCheckAuthCookiesRequest() {
 
