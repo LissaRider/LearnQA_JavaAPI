@@ -21,7 +21,7 @@ public class Exercise10Test {
 
     @ParameterizedTest
     @ValueSource(strings = {"", "value", "valuevaluevalue", "valuevaluevaluevalue"})
-    public void testNegativeAuthUser(String value) {
+    public void testValueLength(String value) {
 
         int length = value.length();
 
