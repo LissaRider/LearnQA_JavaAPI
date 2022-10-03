@@ -74,37 +74,31 @@ public class Exercise8Test {
         String error = createJobWithTokenResponse.get("error");
 //        System.out.printf("\terror: %s%n", error);
 
-        if (status != null) {
-            switch (status) {
-                case NOT_READY:
-                    System.out.printf("\nWarning! %s, turn on waiting for %d seconds%n", status, seconds);
-                    Thread.sleep(seconds * 1000L);
-                    createJobWithTokenResponse = response(token);
-                    System.out.println("\nThanks for waiting. " + getStatus(createJobWithTokenResponse));
+        switch (status) {
+            case NOT_READY:
+                System.out.printf("\nWarning! %s, turn on waiting for %d seconds%n", status, seconds);
+                Thread.sleep(seconds * 1000L);
+                createJobWithTokenResponse = response(token);
+                System.out.printf("\nThanks for waiting. %s%n", getStatus(createJobWithTokenResponse));
 
-                    String result = createJobWithTokenResponse.get("result");
+                String result = createJobWithTokenResponse.get("result");
 //                System.out.printf("\tresult: %s%n", result);
-                    assertNotNull(result, "Error! Result is null");
-                    break;
-                case READY:
-                    System.out.println(status);
-                    break;
-                default:
-                    System.err.println("\nError! " + createJobWithTokenResponse.prettify());
-                    break;
-            }
-        } else {
-            System.err.println("\nError! " + error);
+                assertNotNull(result, "Error! Result is null");
+                break;
+            case READY:
+                System.out.println(status);
+                break;
+            default:
+                System.err.printf("\nError! %s%n", createJobWithTokenResponse.prettify());
+                break;
         }
     }
-
 
     private String getStatus(JsonPath response) {
         return response.get("status");
     }
 
     private JsonPath response(String token) {
-
         return RestAssured
                 .given()
                 .queryParam("token", token)
